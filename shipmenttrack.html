@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="images/hiltonlogo.png" rel="apple-touch-icon" sizes="144x144">
-    <link href="images/hiltonlogo.png" rel="apple-touch-icon">
-    <link href="images/hiltonlogo.png" rel="shortcut icon">
-    <title>Track Shipment | HILTON CARGO Pro V2.1</title>
+    <link href="images/express.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="images/express.png" rel="apple-touch-icon">
+    <link href="images/express.png" rel="shortcut icon">
+    <title>Track Shipment | Express Delivery Service</title>
 
     <!-- CSS here -->
     <link rel="stylesheet" href="home-assets/css/bootstrap.min.css">
@@ -141,6 +141,7 @@
 
         .py-80 { padding-top: 80px; padding-bottom: 80px; }
         .py-120 { padding-top: 120px; padding-bottom: 120px; }
+        .tracking-search-section { padding-top: 80px; padding-bottom: 80px; }
 
         [data-aos] { opacity: 1 !important; transform: none !important; }
 
@@ -173,6 +174,220 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--gray-50);
             color: var(--gray-800);
+        }
+
+        .tracking-hero {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            background-image:
+                linear-gradient(90deg, rgba(5, 17, 50, 0.92) 0%, rgba(7, 24, 63, 0.78) 48%, rgba(7, 24, 63, 0.25) 100%),
+                url("home-assets/img/banner/shipment-tracking-hero.jpg");
+        }
+
+        .tracking-hero::before {
+            background: none;
+            opacity: 0;
+        }
+
+        .tracking-hero::after {
+            background: none;
+            mix-blend-mode: normal;
+        }
+
+        .tracking-hero__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 12px;
+            color: #fbbf24;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .tracking-hero__eyebrow i {
+            font-size: 14px;
+        }
+
+        .tracking-hero__lead {
+            max-width: 560px;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .tracking-guide {
+            overflow: hidden;
+            border: 1px solid var(--gray-100);
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 12px 38px rgba(15, 23, 42, 0.07);
+        }
+
+        .tracking-guide__visual {
+            position: relative;
+            min-height: 100%;
+            padding: 14px;
+        }
+
+        .tracking-guide__visual img {
+            display: block;
+            width: 100%;
+            min-height: 330px;
+            height: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        .tracking-guide__photo-note {
+            position: absolute;
+            right: 28px;
+            bottom: 28px;
+            left: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 14px;
+            background: rgba(8, 22, 55, 0.82);
+            color: #fff;
+            backdrop-filter: blur(10px);
+        }
+
+        .tracking-guide__photo-note i {
+            display: grid;
+            width: 38px;
+            height: 38px;
+            flex: 0 0 38px;
+            place-items: center;
+            border-radius: 11px;
+            background: rgba(251, 191, 36, 0.16);
+            color: #fbbf24;
+        }
+
+        .tracking-guide__photo-note strong,
+        .tracking-guide__photo-note span {
+            display: block;
+        }
+
+        .tracking-guide__photo-note strong {
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .tracking-guide__photo-note span {
+            margin-top: 2px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 11px;
+        }
+
+        .tracking-guide__content {
+            padding: 34px 34px 34px 18px;
+        }
+
+        .tracking-guide__eyebrow {
+            margin-bottom: 10px;
+            color: var(--navy);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .tracking-guide__title {
+            margin: 0 0 12px;
+            color: var(--gray-900);
+            font-size: clamp(23px, 2.2vw, 30px);
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .tracking-guide__copy {
+            margin: 0 0 22px;
+            color: var(--gray-600);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .tracking-guide__steps {
+            display: grid;
+            gap: 14px;
+        }
+
+        .tracking-guide__step {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+        }
+
+        .tracking-guide__step-number {
+            display: grid;
+            width: 32px;
+            height: 32px;
+            flex: 0 0 32px;
+            place-items: center;
+            border: 1px solid #dbe4ff;
+            border-radius: 10px;
+            background: #f2f5ff;
+            color: var(--navy);
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .tracking-guide__step strong {
+            display: block;
+            margin: 1px 0 3px;
+            color: var(--gray-800);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .tracking-guide__step span {
+            display: block;
+            color: var(--gray-500);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 767.98px) {
+            .tracking-hero {
+                min-height: 250px;
+                background-position: 62% center;
+            }
+
+            .tracking-search-section {
+                padding-top: 16px;
+                padding-bottom: 48px;
+            }
+
+            .tracking-hero__lead {
+                max-width: 420px;
+                font-size: 13px;
+            }
+
+            .tracking-guide__visual {
+                min-height: 0;
+                padding: 12px 12px 0;
+            }
+
+            .tracking-guide__visual img {
+                min-height: 230px;
+                max-height: 280px;
+            }
+
+            .tracking-guide__photo-note {
+                right: 24px;
+                bottom: 14px;
+                left: 24px;
+            }
+
+            .tracking-guide__content {
+                padding: 24px 22px 28px;
+            }
         }
 
         /* ============== TRACKING FORM ============== */
@@ -1132,8 +1347,8 @@
                 <div class="row align-items-center">
                     <div class="col-xl-7">
                         <ul class="tg-header__top-info left-side list-wrap">
-                            <li><i class="flaticon-location-1"></i>669 Oak Avenue Hickory Hills Illinois United States</li>
-                            <li><i class="flaticon-envelope"></i><a href="mailto:hiltonsupport@gmail.com">hiltonsupport@gmail.com</a></li>
+                            <li><i class="flaticon-location-1"></i>Hereford HR1 4LS, UK</li>
+                            <li><i class="flaticon-envelope"></i><a href="mailto:expressdeliveryservice256@gmail.com">expressdeliveryservice256@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1154,7 +1369,7 @@
                                     </a>
                                 </div>
                                 <div class="logo">
-                                    <a href="index.htm"><img src="images/hiltonlogo.png" alt="Logo"></a>
+                                    <a href="index.htm"><img src="images/express.png" alt="Logo"></a>
                                 </div>
                             </div>
                             <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -1180,7 +1395,7 @@
                             <nav class="tgmobile__menu-box">
                                 <div class="close-btn"><i class="tg-flaticon-close"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.htm"><img src="images/hiltonlogo.png" alt="Logo"></a>
+                                    <a href="index.htm"><img src="images/express.png" alt="Logo"></a>
                                 </div>
                                 <div class="tgmobile__menu-outer"></div>
                             </nav>
@@ -1197,18 +1412,16 @@
     <!-- main-area -->
     <main class="fix">
         <!-- breadcrumb-area -->
-        <section class="breadcrumb__area breadcrumb__bg" style="background-image: url(home-assets/img/bg/breadcrumb_bg.jpg);">
+        <section class="breadcrumb__area breadcrumb__bg tracking-hero">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="breadcrumb__content">
+                            <span class="tracking-hero__eyebrow"><i class="fas fa-location-crosshairs"></i> Shipment visibility</span>
                             <h2 class="title" data-aos="fade-up" data-aos-delay="0">Track Your Shipment</h2>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
-                                    <li class="breadcrumb-item"><a href="index.htm">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Track Shipment</li>
-                                </ol>
-                            </nav>
+                            <p class="tracking-hero__lead" data-aos="fade-up" data-aos-delay="200">
+                                Check the latest recorded status, route details and estimated delivery for your shipment.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1217,7 +1430,7 @@
         <!-- breadcrumb-area-end -->
 
         <!-- tracking-area -->
-        <section class="py-80">
+        <section class="tracking-search-section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-11 col-lg-12">
@@ -1265,6 +1478,61 @@
                             </div>
                         </div>
 
+                        <!-- TRACKING GUIDE -->
+                        <section class="tracking-guide mb-8" aria-labelledby="tracking-guide-title">
+                            <div class="row g-0 align-items-stretch">
+                                <div class="col-lg-6">
+                                    <div class="tracking-guide__visual">
+                                        <img
+                                            src="home-assets/img/images/shipment-tracking-guide.jpg"
+                                            alt="Courier scanning a parcel at a modern distribution center"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+                                        <div class="tracking-guide__photo-note">
+                                            <i class="fas fa-box-open" aria-hidden="true"></i>
+                                            <div>
+                                                <strong>Updates at every milestone</strong>
+                                                <span>Follow the shipment details recorded along its journey.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="tracking-guide__content">
+                                        <div class="tracking-guide__eyebrow">A clearer delivery journey</div>
+                                        <h2 class="tracking-guide__title" id="tracking-guide-title">Everything you need to follow your shipment.</h2>
+                                        <p class="tracking-guide__copy">
+                                            Enter your tracking number to review the latest shipment update. Available details can include its current status, route information and estimated delivery date.
+                                        </p>
+                                        <div class="tracking-guide__steps">
+                                            <div class="tracking-guide__step">
+                                                <div class="tracking-guide__step-number">01</div>
+                                                <div>
+                                                    <strong>Enter your tracking number</strong>
+                                                    <span>Use the exact number provided when your shipment was arranged.</span>
+                                                </div>
+                                            </div>
+                                            <div class="tracking-guide__step">
+                                                <div class="tracking-guide__step-number">02</div>
+                                                <div>
+                                                    <strong>Review the latest update</strong>
+                                                    <span>See the recorded status and delivery details available for your shipment.</span>
+                                                </div>
+                                            </div>
+                                            <div class="tracking-guide__step">
+                                                <div class="tracking-guide__step-number">03</div>
+                                                <div>
+                                                    <strong>Need a hand?</strong>
+                                                    <span>Keep your tracking number nearby when contacting our support team.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
                         <!-- LOADING STATE -->
                         <div id="loading-state" class="d-none mb-8">
                             <div class="pro-card">
@@ -1284,10 +1552,10 @@
                                     <div>
                                         <div class="detail-brand mb-3">
                                             <div class="detail-logo">
-                                                <img src="images/hiltonlogo.png" alt="Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='HC';">
+                                                <img src="images/express.png" alt="Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='EDS';">
                                             </div>
                                             <div>
-                                                <div class="detail-brand-name">HILTON CARGO</div>
+                                                <div class="detail-brand-name">Express Delivery Service</div>
                                                 <div class="detail-brand-sub">Logistics Portal</div>
                                             </div>
                                         </div>
@@ -1538,7 +1806,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex justify-content-md-end gap-3 flex-wrap">
-                                            <a href="tel:+13825957475" class="btn-track" style="padding:12px 22px; font-size:13px;">
+                                            <a href="tel:+447456700698" class="btn-track" style="padding:12px 22px; font-size:13px;">
                                                 <i class="fas fa-phone" style="color:var(--gold);"></i>Call Us
                                             </a>
                                             <a href="contact.html" style="background:white; color:var(--navy); border:2px solid var(--navy); border-radius:14px; padding:12px 22px; font-size:13px; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all 0.25s ease;" onmouseover="this.style.background='var(--navy)'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='var(--navy)';">
@@ -1568,7 +1836,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="footer__widget">
                             <div class="footer__logo mb-25">
-                                <a href="index.htm"><img src="images/hiltonlogo.png" alt="Logo"></a>
+                                <a href="index.htm"><img src="images/express.png" alt="Logo"></a>
                             </div>
                             <div class="footer__content mb-25">
                                 <p>Your trusted partner in global logistics. We ensure your packages reach their destination safely and on time, every time.</p>
@@ -1612,9 +1880,9 @@
                             <h4 class="footer__widget-title">Contact Info</h4>
                             <div class="footer__widget-list">
                                 <ul class="list-wrap">
-                                    <li class="address"><i class="flaticon-location-1"></i>669 Oak Avenue Hickory Hills, Illinois</li>
-                                    <li class="number"><i class="flaticon-phone-call"></i>+1 382 595 7475</li>
-                                    <li class="mail"><i class="flaticon-envelope"></i><a href="mailto:hiltonsupport@gmail.com">hiltonsupport@gmail.com</a></li>
+                                    <li class="address"><i class="flaticon-location-1"></i>Hereford HR1 4LS, UK</li>
+                                    <li class="number"><i class="flaticon-phone-call"></i>+44 7456 700698</li>
+                                    <li class="mail"><i class="flaticon-envelope"></i><a href="mailto:expressdeliveryservice256@gmail.com">expressdeliveryservice256@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1628,7 +1896,7 @@
                     <div class="col-md-12">
                         <div class="footer__bottom-content">
                             <div class="footer__copyright-text">
-                                <p>© 2024 HILTON CARGO. All rights reserved.</p>
+                                <p>© 2024 Express Delivery Service. All rights reserved.</p>
                             </div>
                         </div>
                     </div>
@@ -1784,7 +2052,7 @@
         const s = (shipment.status || 'in_transit').toLowerCase().replace(/ /g, '_');
 
         let events = [
-            { status: 'Order Placed & Confirmed', location: origin, date: d(0), desc: 'Shipment order has been received and confirmed by HILTON CARGO', cls: 'done' },
+            { status: 'Order Placed & Confirmed', location: origin, date: d(0), desc: 'Shipment order has been received and confirmed by Express Delivery Service', cls: 'done' },
             { status: 'Package Picked Up', location: origin, date: d(4), desc: 'Courier picked up the package from sender address', cls: 'done' },
             { status: 'Departed Origin Hub', location: origin + ' Sorting Facility', date: d(10), desc: 'Package cleared origin processing and in transit', cls: 'done' },
         ];
@@ -1802,7 +2070,7 @@
         }
 
         if (s === 'delivered') {
-            events.push({ status: 'Delivered Successfully', location: dest, date: shipment.updated_at || d(90), desc: 'Package delivered and signed for by recipient. Thank you for using HILTON CARGO!', cls: 'done' });
+            events.push({ status: 'Delivered Successfully', location: dest, date: shipment.updated_at || d(90), desc: 'Package delivered and signed for by recipient. Thank you for using Express Delivery Service!', cls: 'done' });
         }
 
         const container = document.getElementById('timeline-container');

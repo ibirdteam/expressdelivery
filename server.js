@@ -459,7 +459,7 @@ const renderReceiptHtml = (shipment) => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HILTON CARGO - Shipment Invoice ${s.tracking_number || ''}</title>
+<title>Express Delivery Service - Shipment Invoice ${s.tracking_number || ''}</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -712,11 +712,11 @@ const renderReceiptHtml = (shipment) => {
   <div class="header">
     <div class="logo-block">
       <div class="logo-box">
-        <img src="../images/hiltonlogo.png" alt="HILTON CARGO" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="fallback" style="display:none;">HC</div>
+        <img src="../images/express.png" alt="Express Delivery Service" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="fallback" style="display:none;">EDS</div>
       </div>
       <div>
-        <div class="brand-title">HILTON CARGO</div>
+        <div class="brand-title">Express Delivery Service</div>
         <div class="brand-sub">LOGISTICS</div>
       </div>
     </div>
@@ -1124,7 +1124,7 @@ const render404Html = () => `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>HILTON CARGO - 404 Not Found</title>
+<title>Express Delivery Service - 404 Not Found</title>
 <style>
   body { font-family:'Georgia','Courier New',serif; background:#ffffff; min-height:100vh; display:flex; align-items:center; justify-content:center; margin:0; }
   .nfbox { text-align:center; max-width:480px; padding:40px; }
@@ -1238,9 +1238,9 @@ app.get('/api/shipments/export/invoices', async (req, res) => {
 <div class="page" style="page-break-after: always;">
   <div class="header">
     <div class="logo-block">
-      <div class="logo-box"><div class="fallback">HC</div></div>
+      <div class="logo-box"><div class="fallback">EDS</div></div>
       <div>
-        <div class="brand-title">HILTON CARGO</div>
+        <div class="brand-title">Express Delivery Service</div>
         <div class="brand-sub">LOGISTICS</div>
       </div>
     </div>
@@ -1285,7 +1285,7 @@ app.get('/api/shipments/export/invoices', async (req, res) => {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>HILTON CARGO - All Shipments Invoices</title>
+<title>Express Delivery Service - All Shipments Invoices</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f5f5f5; color: #212121; line-height: 1.4; }
@@ -1399,7 +1399,7 @@ async function startServer() {
       const server = app.listen(port, () => {
         console.log('');
         console.log('╔══════════════════════════════════════════════════════════╗');
-        console.log('║       🚀 HILTON CARGO SERVER STARTED SUCCESSFULLY       ║');
+        console.log('║  🚀 EXPRESS DELIVERY SERVICE SERVER STARTED SUCCESSFULLY ║');
         console.log('╚══════════════════════════════════════════════════════════╝');
         console.log('');
 
