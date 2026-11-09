@@ -448,6 +448,8 @@ const convertFirestoreTimestamps = (obj) => {
   return result;
 };
 
+const companyLogoDataUri = `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'images', 'express.png')).toString('base64')}`;
+
 const renderReceiptHtml = (shipment) => {
   const s = shipment || {};
   const prog = Math.max(0, Math.min(100, Number(s.progress_pct) || 0));
@@ -494,8 +496,8 @@ const renderReceiptHtml = (shipment) => {
     gap: 14px;
   }
   .logo-box {
-    width: 68px;
-    height: 56px;
+    width: 126px;
+    height: 70px;
     border: 4px solid ${brandBlue};
     border-radius: 10px;
     display: flex;
@@ -504,8 +506,8 @@ const renderReceiptHtml = (shipment) => {
     background: #ffffff;
   }
   .logo-box img {
-    width: 44px;
-    height: 44px;
+    width: 116px;
+    height: 60px;
     object-fit: contain;
   }
   .logo-box .fallback {
@@ -712,7 +714,7 @@ const renderReceiptHtml = (shipment) => {
   <div class="header">
     <div class="logo-block">
       <div class="logo-box">
-        <img src="../images/express.png" alt="Express Delivery Service" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="${companyLogoDataUri}" alt="Express Delivery Service" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="fallback" style="display:none;">EDS</div>
       </div>
       <div>
@@ -1238,7 +1240,7 @@ app.get('/api/shipments/export/invoices', async (req, res) => {
 <div class="page" style="page-break-after: always;">
   <div class="header">
     <div class="logo-block">
-      <div class="logo-box"><div class="fallback">EDS</div></div>
+      <div class="logo-box" data-company-logo><div class="fallback">EDS</div></div>
       <div>
         <div class="brand-title">Express Delivery Service</div>
         <div class="brand-sub">LOGISTICS</div>
@@ -1296,7 +1298,8 @@ body { padding: 24px; }
 .page { width: 100%; max-width: 850px; margin: 0 auto 30px; background: #fff; border: 2px solid ${rowBorder}; padding: 36px 40px 40px; position: relative; }
 .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; flex-wrap: wrap; gap: 20px; }
 .logo-block { display: flex; align-items: center; gap: 14px; }
-.logo-box { width: 68px; height: 56px; border: 4px solid ${brandBlue}; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: #fff; }
+.logo-box { width: 126px; height: 70px; border: 4px solid ${brandBlue}; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: #fff; }
+.logo-box img { width: 116px; height: 60px; object-fit: contain; }
 .logo-box .fallback { font-size: 28px; font-weight: 900; color: ${brandBlue}; letter-spacing: -1px; }
 .brand-title { font-size: 26px; font-weight: 900; color: ${brandBlue}; letter-spacing: 0.3px; line-height: 1; }
 .brand-sub { font-size: 14px; color: #455A64; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; margin-top: 4px; }
@@ -1328,6 +1331,9 @@ body { padding: 24px; }
 </style>
 </head>
 <body>
+<template id="company-logo-template">
+  <img src="${companyLogoDataUri}" alt="Express Delivery Service">
+</template>
 <div class="toolbar">
   <button onclick="window.print()">&#128438; Print All</button>
   <button onclick="downloadAll()">&#128190; Save as HTML File</button>
@@ -1339,12 +1345,23 @@ body { padding: 24px; }
 </div>
 ${invoiceCards}
 <script>
+document.querySelectorAll('.logo-box[data-company-logo]').forEach(function (box) {
+  var template = document.getElementById('company-logo-template');
+  if (template && !box.querySelector('img')) {
+    box.replaceChildren(template.content.cloneNode(true));
+  }
+});
+
 function downloadAll() {
   var tb = document.querySelector('.toolbar');
   var sm = document.querySelector('.summary');
   if (tb) tb.style.display = 'none';
   if (sm) sm.style.display = 'none';
-  var html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+  var exportDocument = document.documentElement.cloneNode(true);
+  exportDocument.querySelectorAll('.logo-box[data-company-logo] img').forEach(function (img) {
+    img.remove();
+  });
+  var html = '<!DOCTYPE html>' + exportDocument.outerHTML;
   var blob = new Blob([html], { type: 'text/html' });
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
